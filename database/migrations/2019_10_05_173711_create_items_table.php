@@ -17,6 +17,7 @@ class CreateItemsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->nullable();
             $table->integer('course_id');
+            $table->integer('view_count')->default(0);
             $table->string('url')->nullable();
             $table->longtext('description')->nullable();
             $table->softDeletes(); //elimina pero para los demás, admin puede ver
