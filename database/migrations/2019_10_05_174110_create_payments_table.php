@@ -19,7 +19,7 @@ class CreatePaymentsTable extends Migration
             $table->integer('category_id')->nullable();
             $table->integer('course_id')->nullable();
             $table->double('amount', 10, 2);
-            $table->tinyInteger('status')->default('started_payment');
+            $table->string('status')->default('started_payment');
             $table->string('mode_of_payment')->nullable();//card, cash, online 
             $table->string('payment_processor')->nullable();//paypal, etc. 
             $table->softDeletes(); //elimina pero para los demás, admin puede ver
