@@ -15,8 +15,12 @@ class CreateViewsTable extends Migration
     {
         Schema::create('views', function (Blueprint $table){
             $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('user_account_id')->nullable();
+            $table->integer('category_id')->nullable();
+            $table->integer('course_id')->nullable();
+            $table->integer('item_id')->nullable();
             $table->timestamps();
-
         });
     }
 
