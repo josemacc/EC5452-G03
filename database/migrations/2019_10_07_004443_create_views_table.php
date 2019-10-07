@@ -13,7 +13,11 @@ class CreateViewsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('views', function (Blueprint $table){
+            $table->increments('id');
+            $table->timestamps();
+
+        });
     }
 
     /**
