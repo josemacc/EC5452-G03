@@ -3,7 +3,7 @@
     @foreach($categories as $category)
 
         <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="https://image.shutterstock.com/z/stock-vector-grunge-red-sample-word-round-rubber-seal-stamp-on-white-background-1242668641.jpg" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{!! $category->name !!}</h5>
             <p class="card-text">{!! $category->description !!}</p>
@@ -20,6 +20,11 @@
         </div>
     @endforeach
 </div>
+
+
+
+
+
 
 
 <!-- 
