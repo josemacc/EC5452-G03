@@ -1,10 +1,19 @@
-<li class="{{ Request::is('courses*') ? 'active' : '' }}">
-    <a href="{!! route('courses.index') !!}"><i class="fa fa-edit"></i><span>All Courses</span></a>
+<li class="{{ Request::is('categories*') ? 'active' : '' }}">
+    <a href="{!! route('categories.index') !!}"><i class="fa fa-edit"></i><span>All Courses</span></a>
 </li>
 
 <li class="{{ Request::is('courseUsers*') ? 'active' : '' }}">
     <a href="{!! route('courseUsers.index') !!}"><i class="fa fa-edit"></i><span>Subscriptions</span></a>
 </li>
+
+<!-- Instructor -->
+@if (Auth::user()->role_id < 4)
+
+<li class="{{ Request::is('courses*') ? 'active' : '' }}">
+    <a href="{!! route('courses.index') !!}"><i class="fa fa-edit"></i><span>My Courses</span></a>
+</li>
+
+@endif
 
 <!-- Admin section -->
 @if (Auth::user()->role_id < 3)
