@@ -7,7 +7,7 @@
 </li>
 
 <!-- Admin section -->
-@if (Auth::user()->role_id)
+@if (Auth::user()->role_id < 3)
 
 <li class="{{ Request::is('courses*') ? 'active' : '' }}">
     <a href="{!! route('courses.index') !!}"><i class="fa fa-edit"></i><span>Courses</span></a>
