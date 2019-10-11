@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class User
  * @package App\Models
- * @version October 7, 2019, 1:06 pm UTC
+ * @version October 11, 2019, 3:51 pm UTC
  *
  * @property string name
  * @property string first_name
@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|\Carbon\Carbon email_verified_at
  * @property string password
  * @property integer view_count
+ * @property integer role_id
  * @property string remember_token
  */
 class User extends Model
@@ -46,6 +47,7 @@ class User extends Model
         'email_verified_at',
         'password',
         'view_count',
+        'role_id',
         'remember_token'
     ];
 
@@ -65,6 +67,7 @@ class User extends Model
         'email' => 'string',
         'password' => 'string',
         'view_count' => 'integer',
+        'role_id' => 'integer',
         'remember_token' => 'string'
     ];
 
