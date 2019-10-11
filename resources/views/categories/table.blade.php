@@ -8,7 +8,7 @@
             <h5 class="card-title">{!! $category->name !!}</h5>
             <p class="card-text">{{ str_limit($category->description, $limit = 150, $end = '...') }}</p>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Views: {!! $category->view_count !!}</li>
+                <small class="text-muted">Views: {!! $category->view_count !!}</small>
             </ul>
         </div>
         <div class="card-footer">
