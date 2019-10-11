@@ -2,22 +2,19 @@
  <div class="card-deck">
     @foreach($categories as $category)
 
-        <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem;">
         <img src="https://image.shutterstock.com/z/stock-vector-grunge-red-sample-word-round-rubber-seal-stamp-on-white-background-1242668641.jpg" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{!! $category->name !!}</h5>
             <p class="card-text">{!! $category->description !!}</p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">{!! $category->view_count !!}</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">Views: {!! $category->view_count !!}</li>
         </ul>
         <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+        <a href="#" class="btn btn-primary">View Category</a>
         </div>
-        </div>
+    </div>
     @endforeach
 </div>
 
