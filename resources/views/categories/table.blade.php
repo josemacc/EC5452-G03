@@ -15,8 +15,10 @@
             {!! Form::open(['route' => ['categories.destroy', $category->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
                     <a href="{!! route('categories.show', [$category->id]) !!}" class="btn btn-primary mr-5">View Category</a>
+                    @if (Auth::user()->role_id < 3)
                     <a href="{!! route('categories.edit', [$category->id]) !!}" class='btn btn-default mr-5'><i class="glyphicon glyphicon-edit"></i></a>
                     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                    @endif
                 </div>
             {!! Form::close() !!}
         </div>
