@@ -1,17 +1,21 @@
-<li class="{{ Request::is('categories*') ? 'active' : '' }}">
-    <a href="{!! route('categories.index') !!}"><i class="fa fa-edit"></i><span>Categories</span></a>
+<li class="{{ Request::is('courses*') ? 'active' : '' }}">
+    <a href="{!! route('courses.index') !!}"><i class="fa fa-edit"></i><span>All Courses</span></a>
 </li>
 
-<li class="{{ Request::is('comments*') ? 'active' : '' }}">
-    <a href="{!! route('comments.index') !!}"><i class="fa fa-edit"></i><span>Comments</span></a>
+<li class="{{ Request::is('courseUsers*') ? 'active' : '' }}">
+    <a href="{!! route('courseUsers.index') !!}"><i class="fa fa-edit"></i><span>Subscriptions</span></a>
 </li>
+
+<!-- Admin section -->
+@if (Auth::user()->role_id)
 
 <li class="{{ Request::is('courses*') ? 'active' : '' }}">
     <a href="{!! route('courses.index') !!}"><i class="fa fa-edit"></i><span>Courses</span></a>
 </li>
 
-<li class="{{ Request::is('courseUsers*') ? 'active' : '' }}">
-    <a href="{!! route('courseUsers.index') !!}"><i class="fa fa-edit"></i><span>Course Users</span></a>
+
+<li class="{{ Request::is('comments*') ? 'active' : '' }}">
+    <a href="{!! route('comments.index') !!}"><i class="fa fa-edit"></i><span>Comments</span></a>
 </li>
 
 <li class="{{ Request::is('items*') ? 'active' : '' }}">
@@ -30,3 +34,4 @@
     <a href="{!! route('views.index') !!}"><i class="fa fa-edit"></i><span>Views</span></a>
 </li>
 
+@endif
