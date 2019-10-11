@@ -11,7 +11,7 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Views: {!! $category->view_count !!}</li>
         </ul>
-        <div class="card-body">
+        <div class="card-footer">
         <a href="#" class="btn btn-primary">View Category</a>
         </div>
     </div>
