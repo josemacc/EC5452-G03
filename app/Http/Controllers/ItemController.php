@@ -80,7 +80,7 @@ class ItemController extends AppBaseController
 
             return redirect(route('items.index'));
         }
-
+        DB::table('items')->where('id',$id)->increment('view_count');
         return view('items.show')->with('item', $item);
     }
 

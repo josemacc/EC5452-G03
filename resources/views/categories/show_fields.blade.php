@@ -1,42 +1,24 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $category->id !!}</p>
-</div>
-
-<!-- Name Field -->
-<div class="form-group">
-    {!! Form::label('name', 'Name:') !!}
-    <p>{!! $category->name !!}</p>
-</div>
 
 <!-- Description Field -->
-<div class="form-group">
-    {!! Form::label('description', 'Description:') !!}
+<div class="form-group w-100">
     <p>{!! $category->description !!}</p>
 </div>
 
 <!-- View Count Field -->
-<div class="form-group">
-    {!! Form::label('view_count', 'View Count:') !!}
+<div class="form-group w-100 small text-muted">
+    {!! Form::label('view_count', 'Views:') !!}
     <p>{!! $category->view_count !!}</p>
 </div>
 
-<!-- Deleted At Field -->
-<div class="form-group">
-    {!! Form::label('deleted_at', 'Deleted At:') !!}
-    <p>{!! $category->deleted_at !!}</p>
-</div>
-
 <!-- Created At Field -->
-<div class="form-group">
+<div class="form-group w-100 small text-muted">
     {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $category->created_at !!}</p>
+    <p>{!! $category->created_at->format(' h:m - a D d M Y') !!}</p>
 </div>
 
 <!-- Updated At Field -->
-<div class="form-group">
+<div class="form-group w-100 small text-muted">
     {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $category->updated_at !!}</p>
+    <p>{!! $category->updated_at->format(' h:m - a D d M Y') !!}</p>
 </div>
 
