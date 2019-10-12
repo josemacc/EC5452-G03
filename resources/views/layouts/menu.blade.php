@@ -1,5 +1,5 @@
 <li class="{{ Request::is('categories*') ? 'active' : '' }}">
-    <a href="{!! route('categories.index') !!}"><i class="fa fa-edit"></i><span>All Courses</span></a>
+    <a href="{!! route('categories.index') !!}"><i class="fa fa-edit"></i><span>Course Categories</span></a>
 </li>
 
 <li class="{{ Request::is('courseUsers*') ? 'active' : '' }}">
@@ -47,4 +47,12 @@
     <a href="{!! route('roles.index') !!}"><i class="fa fa-edit"></i><span>Roles</span></a>
 </li>
 @endif
+
+<li class="{{ Request::is('courses*') ? 'active' : '' }}">
+    <a href="{!! route('courses.index') !!}"><i class="fa fa-edit"></i><span>Courses</span></a>
+</li>
+
+<li class="{{ Request::is('courses*') ? 'active' : '' }}">
+    <a href="{!! route('courses.index') !!}"><i class="fa fa-edit"></i><span>Courses</span></a>
+</li>
 

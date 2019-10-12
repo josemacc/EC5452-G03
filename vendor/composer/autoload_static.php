@@ -460,6 +460,7 @@ class ComposerStaticInit0c9c0b1937505d0dd61b4d0fb93be3af
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2019_10_05_172832_create_categories_table.php',
         'CreateCommentsTable' => __DIR__ . '/../..' . '/database/migrations/2019_10_05_173402_create_comments_table.php',
+        'CreateCouponsTable' => __DIR__ . '/../..' . '/database/migrations/2019_10_12_222723_create_coupons_table.php',
         'CreateCourseUserTable' => __DIR__ . '/../..' . '/database/migrations/2019_10_05_175422_create_course_user_table.php',
         'CreateCoursesTable' => __DIR__ . '/../..' . '/database/migrations/2019_10_05_164306_create_courses_table.php',
         'CreateFailedJobsTable' => __DIR__ . '/../..' . '/database/migrations/2019_08_19_000000_create_failed_jobs_table.php',

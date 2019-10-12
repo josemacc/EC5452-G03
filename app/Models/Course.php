@@ -8,20 +8,27 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Course
  * @package App\Models
- * @version October 7, 2019, 1:04 pm UTC
+ * @version October 12, 2019, 10:25 pm UTC
  *
  * @property integer user_id
  * @property integer category_id
  * @property string title
+ * @property string sub_title
  * @property string description
  * @property string about_instructor
+ * @property string playlist_url
+ * @property string tags
+ * @property string photo
+ * @property string promo_video_url
+ * @property integer creator_status
+ * @property integer admin_status
+ * @property string what_will_students_learn
+ * @property string target_students
+ * @property string requirements
  * @property float discount_price
  * @property float actual_price
- * @property string playlist_url
  * @property integer view_count
  * @property integer subscriber_count
- * @property integer status
- * @property string photo
  */
 class Course extends Model
 {
@@ -40,15 +47,22 @@ class Course extends Model
         'user_id',
         'category_id',
         'title',
+        'sub_title',
         'description',
         'about_instructor',
+        'playlist_url',
+        'tags',
+        'photo',
+        'promo_video_url',
+        'creator_status',
+        'admin_status',
+        'what_will_students_learn',
+        'target_students',
+        'requirements',
         'discount_price',
         'actual_price',
-        'playlist_url',
         'view_count',
-        'subscriber_count',
-        'status',
-        'photo'
+        'subscriber_count'
     ];
 
     /**
@@ -61,15 +75,22 @@ class Course extends Model
         'user_id' => 'integer',
         'category_id' => 'integer',
         'title' => 'string',
+        'sub_title' => 'string',
         'description' => 'string',
         'about_instructor' => 'string',
+        'playlist_url' => 'string',
+        'tags' => 'string',
+        'photo' => 'string',
+        'promo_video_url' => 'string',
+        'creator_status' => 'integer',
+        'admin_status' => 'integer',
+        'what_will_students_learn' => 'string',
+        'target_students' => 'string',
+        'requirements' => 'string',
         'discount_price' => 'float',
         'actual_price' => 'float',
-        'playlist_url' => 'string',
         'view_count' => 'integer',
-        'subscriber_count' => 'integer',
-        'status' => 'integer',
-        'photo' => 'string'
+        'subscriber_count' => 'integer'
     ];
 
     /**

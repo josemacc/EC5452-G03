@@ -91,6 +91,7 @@ return array(
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2019_10_05_172832_create_categories_table.php',
     'CreateCommentsTable' => $baseDir . '/database/migrations/2019_10_05_173402_create_comments_table.php',
+    'CreateCouponsTable' => $baseDir . '/database/migrations/2019_10_12_222723_create_coupons_table.php',
     'CreateCourseUserTable' => $baseDir . '/database/migrations/2019_10_05_175422_create_course_user_table.php',
     'CreateCoursesTable' => $baseDir . '/database/migrations/2019_10_05_164306_create_courses_table.php',
     'CreateFailedJobsTable' => $baseDir . '/database/migrations/2019_08_19_000000_create_failed_jobs_table.php',

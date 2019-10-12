@@ -41,3 +41,8 @@ Route::resource('users', 'UserController');
 Route::resource('views', 'ViewController');
 
 Route::resource('roles', 'RoleController');
+
+
+Route::resource('courses', 'CourseController');
+
+Route::resource('courses', 'CourseController');
