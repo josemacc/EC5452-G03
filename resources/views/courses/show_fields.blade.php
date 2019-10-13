@@ -11,25 +11,50 @@
             @endif</div>
     </p>
 </div>
+@if(Auth::user()->role_id < 3 || Auth::user()->id == $course->user_id)
+<div class="form-group col-md-6">
+    {!! Form::label('creator_status', 'Creator Status:') !!}
+    
+    @if($course->creator_status ==1 ) 
+    <p>On</p>
+    @else <p>Off</p>
+    
+    @endif
+    
+</div>
 
-
+<!-- Admin Status Field -->
+<div class="form-group col-md-6">
+    {!! Form::label('admin_status', 'Admin Status:') !!}
+    @if($course->admin_status ==1 ) 
+    <p>Approved <a href="#" class="btn btn-danger btn-xs"> Turn to Disapprove</a></p>
+    @else <p>Disapproved <a href="#" class="btn btn-success btn-xs"> Turn to Approve</a></p>
+    @endif
+</div>
+@endif
 <!-- User Id Field -->
-<div class="form-group col-md-4">
+<div class="form-group col-md-6">
     {!! Form::label('user_id', 'Author:') !!}
     <p>{!! $course->user['name'] !!}</p>
 </div>
 
 <!-- Category Id Field -->
-<div class="form-group col-md-4">
+<div class="form-group col-md-6">
     {!! Form::label('category_id', 'Category :') !!}
     <p><a href="/categories/{!!$course->category['id'] !!}">{!!$course->category['name'] !!}</a></p>
 
 </div>
 <!-- Updated At Field -->
-<div class="form-group col-md-4">
-    {!! Form::label('updated_at', 'Updated At:') !!}
+<div class="form-group col-md-6">
+    {!! Form::label('updated_at', 'Last Updated:') !!}
     <p>{!! $course->updated_at !!}</p>
 </div>
+<!-- Created At Field -->
+<div class="form-group col-md-6">
+    {!! Form::label('created_at', 'Created At:') !!}
+    <p>{!! $course->created_at !!}</p>
+</div>
+
 
 <!-- Description Field -->
 <div class="form-group col-md-8">
@@ -43,41 +68,29 @@
     <p>{!! $course->about_instructor !!}</p>
 </div>
 
+
+@if(Auth::user()->role_id < 3 || Auth::user()->id == $course->user_id)
 <!-- Playlist Url Field -->
-<div class="form-group col-md-8">
+ <div class="form-group col-md-8">
     {!! Form::label('playlist_url', 'Playlist Url:') !!}
     <p>{!! $course->playlist_url !!}</p>
-</div>
+</div> 
 
+<!-- Promo Video Url Field -->
+ <div class="form-group col-md-8">
+    {!! Form::label('promo_video_url', 'Promo Video Url:') !!}
+    <p>{!! $course->promo_video_url !!}</p>
+</div> 
+<!-- Creator Status Field -->
+
+@endif
 <!-- Tags Field -->
 <div class="form-group col-md-8">
     {!! Form::label('tags', 'Tags:') !!}
     <p>{!! $course->tags !!}</p>
 </div>
 
-<!-- Photo Field -->
-<div class="form-group col-md-8">
-    {!! Form::label('photo', 'Photo:') !!}
-    <p>{!! $course->photo !!}</p>
-</div>
 
-<!-- Promo Video Url Field -->
-<!-- <div class="form-group">
-    {!! Form::label('promo_video_url', 'Promo Video Url:') !!}
-    <p>{!! $course->promo_video_url !!}</p>
-</div> -->
-
-<!-- Creator Status Field -->
-<div class="form-group">
-    {!! Form::label('creator_status', 'Creator Status:') !!}
-    <p>{!! $course->creator_status !!}</p>
-</div>
-
-<!-- Admin Status Field -->
-<div class="form-group">
-    {!! Form::label('admin_status', 'Admin Status:') !!}
-    <p>{!! $course->admin_status !!}</p>
-</div>
 
 <!-- What Will Students Learn Field -->
 <div class="form-group">
@@ -109,11 +122,6 @@
     <p>{!! $course->actual_price !!}</p>
 </div>
 
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $course->created_at !!}</p>
-</div>
 
 
 
