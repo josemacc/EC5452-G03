@@ -27,8 +27,17 @@ Route::get('/home', 'HomeController@index');
 Route::resource('categories', 'CategoryController');
 
 Route::resource('comments', 'CommentController');
-
+//Courses
 Route::resource('courses', 'CourseController');
+
+Route::post('courses', 'CourseController@disapprove')->name('courses.disapprove');
+
+Route::post('courses', 'CourseController@approve')->name('courses.aprove');
+// Publish/Unpublish
+Route::post('courses', 'CourseController@publishCourse')->name('courses.publishCourse');
+
+Route::post('courses', 'CourseController@unpublishCourse')->name('courses.unpublishCourse');
+
 
 Route::resource('courseUsers', 'CourseUserController');
 

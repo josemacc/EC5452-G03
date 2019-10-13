@@ -27,8 +27,23 @@
 <div class="form-group col-md-6">
     {!! Form::label('admin_status', 'Admin Status:') !!}
     @if($course->admin_status ==1 ) 
-    <p>Approved <a href="#" class="btn btn-danger btn-xs"> Turn to Disapprove</a></p>
-    @else <p>Disapproved <a href="#" class="btn btn-success btn-xs"> Turn to Approve</a></p>
+    <p>Approved | 
+        @if(Auth::user()->role_id < 3)
+        {!! Form::open(['route' => ['courses.disapprove', $course->id], 'method' => 'post']) !!}
+        <input type="hidden" name="course_id" value="{{$course->id}}">
+             {!! Form::button('<i class="glyphicon glyphicon-thumbs-down"></i>Turn to Disapprove', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure you want to disapprove?')"]) !!}
+        {!! Form::close() !!}
+        @endif
+    </p>
+    @endif
+    @if($course->admin_status ==0 ) <p>Disapproved | 
+         @if(Auth::user()->role_id < 3)
+        {!! Form::open(['route' => ['courses.approve' , $course->id], 'method' => 'post']) !!}
+        <input type="hidden" name="course_id" value="{{$course->id}}">
+            {!! Form::button('<i class="glyphicon glyphicon-thumbs-up"></i>Turn to Approve', ['type' => 'submit', 'class' => 'btn btn-success btn-xs', 'onclick' => "return confirm('Are you sure you want to approve?')"]) !!}
+        {!! Form::close() !!}
+        @endif 
+    </p>
     @endif
 </div>
 @endif

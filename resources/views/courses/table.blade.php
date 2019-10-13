@@ -8,7 +8,7 @@
         </tr>
     </thead>
     <tbody>
-    @foreach($courses as $course)
+       @foreach($courses as $course)
         <tr>
             <td width="80%"><h4 style="margin-bottom: 0px">
                 <a href="{!! route('courses.show', [$course->id]) !!}" > {!! $course->title !!} </a>
@@ -44,5 +44,5 @@
             </td>
         </tr>
     @endforeach
-    </tbody>
+     </tbody>
 </table>

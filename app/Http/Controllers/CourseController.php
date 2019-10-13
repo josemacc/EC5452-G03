@@ -23,6 +23,40 @@ class CourseController extends AppBaseController
         $this->courseRepository = $courseRepo;
     }
 
+    public function approve(Request $request){
+        Course::where('id', $request->course_id)
+        ->update([
+            'admin_status' => 1
+        ]);
+        Flash::success('Course approved successfully!');
+        return redirect()->back();
+    }
+    public function disapprove(Request $request){
+        Course::where('id', $request->course_id)
+        ->update([
+            'admin_status' => 0
+        ]);
+         Flash::success('Course disapproved successfully!');
+        return redirect()->back();;
+    }
+
+    public function publishCourse(Request $request){
+        Course::where('id', $request->course_id)
+        ->update([
+            'creator_status' => 1
+        ]);
+         Flash::success('Course published successfully!');
+        return redirect()->back();;
+    }
+    public function unpublishCourse(Request $request){
+        Course::where('id', $request->course_id)
+        ->update([
+            'creator_status' => 0
+        ]);
+         Flash::success('Course unpublished successfully!');
+        return redirect()->back();;
+    }
+
     /**
      * Display a listing of the Course.
      *
