@@ -48,7 +48,5 @@
 </li>
 @endif
 
-<li class="{{ Request::is('courses*') ? 'active' : '' }}">
-    <a href="{!! route('courses.index') !!}"><i class="fa fa-edit"></i><span>Courses</span></a>
-</li>
+
 
