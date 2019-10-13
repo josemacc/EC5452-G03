@@ -7,7 +7,7 @@
 </li>
 
 <!-- Instructor -->
-@if (Auth::user()->role_id < 4)
+@if (Auth::user()->role_id == 4)
 
 <li class="{{ Request::is('courses*') ? 'active' : '' }}">
     <a href="{!! route('courses.index') !!}"><i class="fa fa-edit"></i><span>My Courses</span></a>
