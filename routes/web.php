@@ -44,5 +44,3 @@ Route::resource('roles', 'RoleController');
 
 
 Route::resource('courses', 'CourseController');
-
-Route::resource('courses', 'CourseController');

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Course
  * @package App\Models
- * @version October 12, 2019, 10:25 pm UTC
+ * @version October 12, 2019, 10:57 pm UTC
  *
  * @property integer user_id
  * @property integer category_id
@@ -102,5 +102,12 @@ class Course extends Model
         
     ];
 
-    
+    /**
+     * Get the role that owns this users.
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
+
 }

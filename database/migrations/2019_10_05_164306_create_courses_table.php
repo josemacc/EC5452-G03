@@ -40,8 +40,8 @@ class CreateCoursesTable extends Migration
             $table->double('actual_price', 10, 2);
             
             //stats
-            $table->integer('view_count')->default(0);
-            $table->integer('subscriber_count')->default(0);
+            $table->integer('view_count')->default(0)->nullable();
+            $table->integer('subscriber_count')->default(0)->nullable();
             
             $table->softDeletes(); //elimina pero para los demás, admin puede ver
             $table->timestamps(); // fecha de creacion fecha de actualizacion

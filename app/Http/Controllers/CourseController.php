@@ -8,8 +8,10 @@ use App\Repositories\CourseRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
+use Auth;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\Category;
 
 class CourseController extends AppBaseController
 {
@@ -43,7 +45,8 @@ class CourseController extends AppBaseController
      */
     public function create()
     {
-        return view('courses.create');
+        $categories = Category::all();
+        return view('courses.create')->with('categories',$categories);
     }
 
     /**
@@ -56,7 +59,7 @@ class CourseController extends AppBaseController
     public function store(CreateCourseRequest $request)
     {
         $input = $request->all();
-
+        $input['user_id'] = Auth::user()->id;
         $course = $this->courseRepository->create($input);
 
         Flash::success('Course saved successfully.');

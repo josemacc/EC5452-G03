@@ -30,7 +30,7 @@ class CreateCouponsTable extends Migration
             $table->timestamps();
 
         });
-        }
+    }
 
     /**
      * Reverse the migrations.
@@ -39,6 +39,6 @@ class CreateCouponsTable extends Migration
      */
     public function down()
     {
-        //
+        
     }
 }
