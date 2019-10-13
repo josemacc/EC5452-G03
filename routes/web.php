@@ -32,7 +32,7 @@ Route::resource('courses', 'CourseController');
 
 Route::post('courses', 'CourseController@disapprove')->name('courses.disapprove');
 
-Route::post('courses', 'CourseController@approve')->name('courses.aprove');
+Route::post('courses', 'CourseController@approve')->name('courses.approve');
 // Publish/Unpublish
 Route::post('courses', 'CourseController@publishCourse')->name('courses.publishCourse');
 
