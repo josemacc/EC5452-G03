@@ -10,10 +10,16 @@
     <tbody>
     @foreach($courses as $course)
         <tr>
-            <td width="80%"><h3 style="margin-bottom: 0px">
-                <a href="{!! route('courses.show', [$course->id]) !!}" style="color: black"> {!! $course->title !!} </a>
-                    <h3> <br/>
-            {!! $course->sub_title !!}<br/>
+            <td width="80%"><h4 style="margin-bottom: 0px">
+                <a href="{!! route('courses.show', [$course->id]) !!}" > {!! $course->title !!} </a>
+                </h4> 
+              <div class="text-muted">{{ $course->user['name']}}
+            @if($course->subscriber_count > 0 )
+            | Students : {{number_format($course->subscriber_count)}}
+            @endif</div>
+            {!! $course->sub_title !!}
+          
+            <br/>
             </td>
             <td>{!! $course->photo !!}</td>
             <td></td>
@@ -23,7 +29,7 @@
             </td>
             
             <td>
-                @if(Auth::user()->role_id < 3)
+                @if(Auth::user()->role_id < 3 || $course->user_id =Auth::user()->id )
                 {!! Form::open(['route' => ['courses.destroy', $course->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
                     <a href="{!! route('courses.show', [$course->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>

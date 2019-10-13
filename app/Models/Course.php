@@ -103,11 +103,17 @@ class Course extends Model
     ];
 
     /**
-     * Get the role that owns this users.
+     * Get the category that owns this users.
      */
     public function category()
     {
         return $this->belongsTo('App\Models\Category');
     }
-
+    /**
+     * Get the category that owns this users.
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }
