@@ -11,7 +11,9 @@
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
                     @include('users.show_fields')
-                    <a href="{!! route('users.index') !!}"</a>
+                    {{--Courses--}}
+                    <h3 class="text-center col-md-12">My Courses</h3>
+                    @include('courses.table')
                 </div>
             </div>
         </div>

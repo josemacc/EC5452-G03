@@ -13,6 +13,8 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Illuminate\Support\Facades\DB;
 
+use App\Models\Course;
+
 class UserController extends AppBaseController
 {
     /** @var  UserRepository */
@@ -83,9 +85,13 @@ class UserController extends AppBaseController
 
             return redirect(route('users.index'));
         }
-        DB::table('users')->where('id',$id)->increment('view_count');
 
-        return view('users.show')->with('user', $user);
+        $courses= Course::where('user_id', $id)->get();
+
+        DB::table('users')->where('id',$id)->increment('view_count');
+        return view('users.show')
+        ->with('courses', $courses)
+        ->with('user', $user);
     }
 
     /**
