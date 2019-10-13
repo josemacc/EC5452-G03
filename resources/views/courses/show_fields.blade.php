@@ -71,7 +71,7 @@
         {!! Form::open(['route' => ['courses.unpublishCourse', $course->id], 'method' => 'post']) !!}
 
         <input type="hidden" name="course_id" value="{{$course->id}}">
-             {!! Form::button('<i class="glyphicon glyphicon-thumbs-down"></i>Turn to Unpublish', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure you want to Unpublish?')"]) !!}
+             {!! Form::button('<i class="glyphicon glyphicon-thumbs-down"></i>Unpublish', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure you want to Unpublish?')"]) !!}
         {!! Form::close() !!}
         @endif
     </p>
@@ -85,7 +85,7 @@
         {!! Form::open(['route' => ['courses.publishCourse', $course->id], 'method' => 'post']) !!}
 
         <input type="hidden" name="course_id" value="{{$course->id}}">
-             {!! Form::button('<i class="glyphicon glyphicon-thumbs-down"></i>Turn to Publish', ['type' => 'submit', 'class' => 'btn btn-success btn-xs', 'onclick' => "return confirm('Are you sure you want to Publish?')"]) !!}
+             {!! Form::button('<i class="glyphicon glyphicon-thumbs-down"></i> Publish', ['type' => 'submit', 'class' => 'btn btn-success btn-xs', 'onclick' => "return confirm('Are you sure you want to Publish?')"]) !!}
         {!! Form::close() !!}
         @endif
     </p>
