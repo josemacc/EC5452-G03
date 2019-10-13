@@ -26,11 +26,14 @@
 <!-- Admin Status Field -->
 <div class="form-group col-md-6">
     {!! Form::label('admin_status', 'Admin Status:') !!}
-    @if($course->admin_status ==1 ) 
-    <p>Approved | 
+    <p>
+
+    @if($course->admin_status == 1 ) 
+        Approved         
         @if(Auth::user()->role_id < 3)
+        | 
         {!! Form::open(['route' => ['courses.disapprove', $course->id], 'method' => 'post']) !!}
-        <input type="hidden" name="course_id" value="{{$course->id}}">
+        <input type="hidden" name="course_id" value="{{$course->id}}"/>
              {!! Form::button('<i class="glyphicon glyphicon-thumbs-down"></i>Turn to Disapprove', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure you want to disapprove?')"]) !!}
         {!! Form::close() !!}
         @endif
