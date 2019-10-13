@@ -1,35 +1,24 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $course->id !!}</p>
+<!-- Title Id Field -->
+<div class="form-group col-xs-12">
+    <h1>{!! $course->title !!}</h1>
+    <p class="text-muted">{!! $course->sub_title !!}</p>
 </div>
 
+
 <!-- User Id Field -->
-<div class="form-group">
-    {!! Form::label('user_id', 'User Id:') !!}
-    <p>{!! $course->user_id !!}</p>
+<div class="form-group col-md-6">
+    {!! Form::label('user_id', 'Author:') !!}
+    <p>{!! $course->user['name'] !!}</p>
 </div>
 
 <!-- Category Id Field -->
-<div class="form-group">
-    {!! Form::label('category_id', 'Category Id:') !!}
-    <p>{!! $course->category_id !!}</p>
-</div>
-
-<!-- Title Field -->
-<div class="form-group">
-    {!! Form::label('title', 'Title:') !!}
-    <p>{!! $course->title !!}</p>
-</div>
-
-<!-- Sub Title Field -->
-<div class="form-group">
-    {!! Form::label('sub_title', 'Sub Title:') !!}
-    <p>{!! $course->sub_title !!}</p>
+<div class="form-group col-md-6">
+    {!! Form::label('category_id', 'Category :') !!}
+    <p><a href="/categories/{!!$course->category['id'] !!}">{!!$course->category['name'] !!}</a></p>
 </div>
 
 <!-- Description Field -->
-<div class="form-group">
+<div class="form-group col-md-6">
     {!! Form::label('description', 'Description:') !!}
     <p>{!! $course->description !!}</p>
 </div>

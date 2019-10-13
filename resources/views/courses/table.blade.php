@@ -13,10 +13,14 @@
             <td width="80%"><h4 style="margin-bottom: 0px">
                 <a href="{!! route('courses.show', [$course->id]) !!}" > {!! $course->title !!} </a>
                 </h4> 
-              <div class="text-muted">{{ $course->user['name']}}
+              <div class="text-muted">Instructor: {{ $course->user['name']}}
             @if($course->subscriber_count > 0 )
             | Students : {{number_format($course->subscriber_count)}}
-            @endif</div>
+            @endif
+            @if($course->view_count > 0 )
+            | Views: {{number_format($course->view_count)}}
+            @endif
+            </div>
             {!! $course->sub_title !!}
           
             <br/>
