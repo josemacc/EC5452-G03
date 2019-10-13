@@ -30,13 +30,13 @@ Route::resource('comments', 'CommentController');
 //Courses
 Route::resource('courses', 'CourseController');
 
-Route::post('courses', 'CourseController@disapprove')->name('courses.disapprove');
+Route::post('courses/disapprove', 'CourseController@disapprove')->name('courses.disapprove');
 
-Route::post('courses', 'CourseController@approve')->name('courses.approve');
+Route::post('courses/approve', 'CourseController@approve')->name('courses.approve');
 // Publish/Unpublish
-Route::post('courses', 'CourseController@publishCourse')->name('courses.publishCourse');
+Route::post('courses/pusblish', 'CourseController@publishCourse')->name('courses.publishCourse');
 
-Route::post('courses', 'CourseController@unpublishCourse')->name('courses.unpublishCourse');
+Route::post('courses/unpublish', 'CourseController@unpublishCourse')->name('courses.unpublishCourse');
 
 
 Route::resource('courseUsers', 'CourseUserController');

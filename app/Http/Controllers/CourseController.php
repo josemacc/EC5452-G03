@@ -12,7 +12,7 @@ use Auth;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use App\Models\Category;
-
+use App\Models\Course;
 class CourseController extends AppBaseController
 {
     /** @var  CourseRepository */
@@ -21,40 +21,6 @@ class CourseController extends AppBaseController
     public function __construct(CourseRepository $courseRepo)
     {
         $this->courseRepository = $courseRepo;
-    }
-
-    public function approve(Request $request){
-        Course::where('id', $request->course_id)
-        ->update([
-            'admin_status' => 1
-        ]);
-        Flash::success('Course approved successfully!');
-        return redirect()->back();
-    }
-    public function disapprove(Request $request){
-        Course::where('id', $request->course_id)
-        ->update([
-            'admin_status' => 0
-        ]);
-         Flash::success('Course disapproved successfully!');
-        return redirect()->back();;
-    }
-
-    public function publishCourse(Request $request){
-        Course::where('id', $request->course_id)
-        ->update([
-            'creator_status' => 1
-        ]);
-         Flash::success('Course published successfully!');
-        return redirect()->back();;
-    }
-    public function unpublishCourse(Request $request){
-        Course::where('id', $request->course_id)
-        ->update([
-            'creator_status' => 0
-        ]);
-         Flash::success('Course unpublished successfully!');
-        return redirect()->back();;
     }
 
     /**
@@ -188,5 +154,38 @@ class CourseController extends AppBaseController
         Flash::success('Course deleted successfully.');
 
         return redirect(route('courses.index'));
+    }
+    public function approve(Request $request){
+        Course::where('id', $request->course_id)
+        ->update([
+            'admin_status' => 1
+        ]);
+        Flash::success('Course approved successfully!');
+        return redirect()->back();
+    }
+    public function disapprove(Request $request){
+        Course::where('id', $request->course_id)
+        ->update([
+            'admin_status' => 0
+        ]);
+         Flash::success('Course disapproved successfully!');
+        return redirect()->back();;
+    }
+
+    public function publishCourse(Request $request){
+        Course::where('id', $request->course_id)
+        ->update([
+            'creator_status' => 1
+        ]);
+         Flash::success('Course published successfully!');
+        return redirect()->back();;
+    }
+    public function unpublishCourse(Request $request){
+        Course::where('id', $request->course_id)
+        ->update([
+            'creator_status' => 0
+        ]);
+         Flash::success('Course unpublished successfully!');
+        return redirect()->back();;
     }
 }
