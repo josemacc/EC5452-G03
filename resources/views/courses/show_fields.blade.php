@@ -35,6 +35,7 @@
         {!! Form::close() !!}
         @endif
     </p>
+
     @endif
     @if($course->admin_status ==0 ) <p>Disapproved | 
          @if(Auth::user()->role_id < 3)
@@ -45,9 +46,7 @@
         @endif 
     </p>
     @endif
-</div>
-@endif
-<!-- User Id Field -->
+<!-- User Id Fields -->
 <div class="form-group col-md-6">
     {!! Form::label('user_id', 'Author:') !!}
     <p>{!! $course->user['name'] !!}</p>
