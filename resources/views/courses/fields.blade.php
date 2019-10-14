@@ -107,7 +107,7 @@
 
 <!-- Creator Status Field -->
 <div class="form-group col-sm-6">
-  <label for="creator_status">Admin Status:</label>
+  <label for="creator_status">Creator Status:</label>
   <select class="form-control" name="creator_status" id="creator_status">
     
     <!-- Aqui va el error 3 -->
