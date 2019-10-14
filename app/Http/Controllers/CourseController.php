@@ -83,8 +83,11 @@ class CourseController extends AppBaseController
 
             return redirect(route('courses.index'));
         }
+        
+        //$users = Course::find($id) -> users()->get();
+     
 
-        return view('courses.show')->with('course', $course);
+        return view('courses.show')->with('course', $course);//->with('users', $users);
     }
 
     /**

@@ -84,5 +84,9 @@ class User extends Model
     {
         return $this->belongsTo('App\Models\Role');
     }
-    
+
+    public function courses()
+    {
+        return $this->belongsToMany('App\Models\Course');
+    }
 }

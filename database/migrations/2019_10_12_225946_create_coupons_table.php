@@ -39,6 +39,7 @@ class CreateCouponsTable extends Migration
      */
     public function down()
     {
-        
+        Schema::dropIfExists('coupons');
+        $table->string('available_on_course_page')->default('no');
     }
 }
