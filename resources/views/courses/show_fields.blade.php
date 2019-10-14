@@ -92,7 +92,7 @@
     @endif
     
 </div>
-@endif
+
 <!-- Admin Status Field -->
 <div class="form-group col-md-6">
     {!! Form::label('admin_status', 'Admin Status:') !!}
@@ -127,7 +127,7 @@
     @endif
 </div>
 
-
+@endif
 
 <!-- Description Field -->
 <div class="form-group col-md-8">
