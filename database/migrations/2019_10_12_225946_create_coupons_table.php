@@ -21,6 +21,7 @@ class CreateCouponsTable extends Migration
             $table->integer('category_id')->nullable();
             $table->integer('user_account_id')->nullable();
             $table->string('type')->default('free'); //free, disount
+            $table->string('available_on_course_page')->default('no');
             $table->double('price',8,2);
             $table->string('status')->default('on'); //on,off
             $table->dateTime('deadline'); //default infinite
@@ -40,6 +41,5 @@ class CreateCouponsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('coupons');
-        $table->string('available_on_course_page')->default('no');
     }
 }
